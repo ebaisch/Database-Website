@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <meta charset="utf-8"/>
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Obaju e-commerce template"/>
+    <meta name="author" content="Eric Baisch"/>
+    <meta name="keywords" content=""/>
+
+    <title>
+        CSE305 Database
+    </title>
+
+    <meta name="keywords" content=""/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+
+    <!-- styles -->
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/owl.carousel.css" rel="stylesheet"/>
+    <link href="css/owl.theme.css" rel="stylesheet"/>
+
+    <!-- theme stylesheet -->
+    <link href="css/style.default.css" rel="stylesheet"/>
+
+    <!-- your stylesheet with modifications -->
+    <link href="css/custom.css" rel="stylesheet"/>
+
+    <script src="js/respond.min.js"></script>
+
+    <link rel="shortcut icon" href="img/favicon.png"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a>
+            </div>
+            <div class="col-md-6" data-animate="fadeInDown">
+                <ul class="menu">
+                    <li><asp:LinkButton ID="loginLabelLink" runat="server" href="#" data-toggle="modal" data-target="#login-modal">Login</asp:LinkButton>
+                    </li>
+                     <li><asp:LinkButton ID="registerLabel" runat="server" href="#" OnClick="LogoutOnClick">Register</asp:LinkButton>
+                    </li>
+                    <li><a href="contact.aspx">
+                        <asp:Label ID="contactLabel" runat="server" Text="Contact Us"></asp:Label></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <asp:Button runat="server"  type="button" name="customerlogin" class="close" data-dismiss="modal" Text="X"></asp:Button>
+                        <h4 class="modal-title" id="Login">Customer login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <asp:Label ID="invalidCredentialsLabel" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox runat="server" name="emailTextField" type="text" class="form-control" id="emailTextField" placeholder="email"/>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox runat="server" name="passwordTextField" type="password" class="form-control" id="passwordTextField" placeholder="password"/>
+                            </div>
+
+                            <p class="text-center">
+                                <asp:Button runat="server"  name="login" class="btn btn-primary" Text="Login" ID="moduleLoginButton" OnClick="LoginButtonClicked"></asp:Button>
+                            </p>
+
+                        <p class="text-center text-muted">Not registered yet?</p>
+                        <p class="text-center text-muted"><a href="register.aspx"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- *** TOP BAR END *** -->
+
+    <!-- *** NAVBAR ***
+ _________________________________________________________ -->
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand home" href="index.aspx" data-animate-hover="bounce">
+                    <img src="img/bmazon_logo.jpg" alt="logo" class="hidden-xs"/>
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"/><span class="sr-only">go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <asp:Button runat="server"  type="button" name="togglenavigation" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    </asp:Button>
+                    <asp:Button runat="server"  type="button" name="togglesearch" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                    </asp:Button>
+                    <a class="btn btn-default navbar-toggle" href="basket.aspx">
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                    </a>
+                </div>
+            </div>
+            <!--/.navbar-header -->
+
+            <div class="navbar-collapse collapse" id="navigation">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="index.aspx">Home</a>
+                    </li>
+                    <li class="inactive"><a href="category-full.aspx">Products</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="navbar-buttons">
+
+                <div class="navbar-collapse collapse right" id="basket-overview">
+                    <a href="basket.aspx" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i>
+                        <asp:Label ID="cartItems" runat="server" Text="Cart Items"></asp:Label>
+                    </a>
+                </div>
+                <!--/.nav-collapse -->
+                <!--
+                <div class="navbar-collapse collapse right" id="search-not-mobile">
+                    <asp:Button runat="server"  type="button" name="togglesearch" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search" Text="Search">
+                    </asp:Button>
+                </div>
+                -->
+            </div>
+
+            <div class="collapse clearfix" id="search">
+
+                    <div class="input-group">
+                        <asp:TextBox runat="server" name="search" type="text" class="form-control" placeholder="Search"/>
+                        <span class="input-group-btn">
+
+			<asp:Button runat="server" name="search1" type="submit" class="btn btn-primary" Text="Submit"></asp:Button>
+
+		    </span>
+                    </div>
+
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#navbar -->
+
+    <!-- *** NAVBAR END *** -->
+
+    <div class="clear"></div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="contentbody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+    <div class="clear"></div>
+    </form>
+        <!-- *** SCRIPTS TO INCLUDE ***
+ _________________________________________________________ -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap-hover-dropdown.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/front.js"></script>
+</body>
+</html>

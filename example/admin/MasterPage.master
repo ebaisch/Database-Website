@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="admin_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+        <meta charset="utf-8"/>
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Obaju e-commerce template"/>
+    <meta name="author" content="Eric Baisch"/>
+    <meta name="keywords" content=""/>
+
+    <title>
+        Employee Page
+    </title>
+
+    <meta name="keywords" content=""/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+
+    <!-- styles -->
+    <link href="~/css/font-awesome.css" rel="stylesheet"/>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/css/animate.min.css" rel="stylesheet"/>
+    <link href="~/css/owl.carousel.css" rel="stylesheet"/>
+    <link href="~/css/owl.theme.css" rel="stylesheet"/>
+
+    <!-- theme stylesheet -->
+    <link href="~/css/style.default.css" rel="stylesheet"/>
+
+    <!-- your stylesheet with modifications -->
+    <link href="~/css/custom.css" rel="stylesheet"/>
+
+    <script src="~/js/respond.min.js"></script>
+
+    <link rel="~/shortcut icon" href="favicon.png"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <asp:Label ID="loginLabel" runat="server" Text="Label"></asp:Label>
+            </div>
+            <div class="col-md-6" data-animate="fadeInDown">
+                <ul class="menu">
+                    <li> 
+                        <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-success btn-sm" data-animate-hover="shake" OnClick="LogoutOnClick">Log out</asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- *** TOP BAR END *** -->
+
+    <!-- *** NAVBAR ***
+ _________________________________________________________ -->
+
+    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand home" href="index.aspx" data-animate-hover="bounce">
+                    <img src="../img/logo.png" alt="logo1" class="hidden-xs"/>
+                    <img src="../img/logo-small.png" alt="Obaju logo2" class="visible-xs"/><span class="sr-only">go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <!--
+                    <asp:Button runat="server"  type="button" name="togglenavigation" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    </asp:Button>
+                    <asp:Button runat="server"  type="button" name="togglesearch" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                    </asp:Button>
+                    <a class="btn btn-default navbar-toggle" href="basket.aspx">
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                    </a>
+                    -->
+                </div>
+            </div>
+            <!--/.navbar-header -->
+
+            <div class="navbar-collapse collapse" id="navigation">
+
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active"><a href="../admin/index.aspx">Home</a>
+                    </li>
+                    <li class="inactive"><a href="../admin/addemployee.aspx">Add Employee</a>
+                    </li>
+                    <li class="inactive"><a href="../admin/addproduct.aspx">Add Product</a>
+                    </li>
+                    <li class="inactive"><a href="../admin/search.aspx">Search</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="navbar-buttons">
+                <!--
+                <div class="navbar-collapse collapse right" id="basket-overview">
+                    <a href="basket.aspx" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i>
+                        <asp:Label ID="cartItems" runat="server" Text="Cart Items"></asp:Label>
+                    </a>
+                </div> -->
+                <!--/.nav-collapse -->
+                
+                <div class="navbar-collapse collapse right" id="search-not-mobile">
+                    
+                </div>
+                
+            </div>
+            <!--
+            <div class="collapse clearfix" id="search">
+
+                    <div class="input-group">
+                        <asp:TextBox runat="server" name="search" type="text" class="form-control" placeholder="Search"/>
+                        <span class="input-group-btn">
+
+			<asp:Button runat="server" name="search1" type="submit" class="btn btn-primary" Text="Submit"></asp:Button>
+
+		    </span>
+                    </div>
+
+            </div> -->
+            <!--/.nav-collapse -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /#navbar -->
+    <!-- *** NAVBAR END *** -->
+
+    <div class="clear"></div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="contentbody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+    <div class="clear"></div>
+    </form>
+        <!-- *** SCRIPTS TO INCLUDE ***
+ _________________________________________________________ -->
+    <script src="~/js/jquery-1.11.0.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.cookie.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/modernizr.js"></script>
+    <script src="~/js/bootstrap-hover-dropdown.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/front.js"></script>
+</body>
+</html>

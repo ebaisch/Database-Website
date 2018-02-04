@@ -1,0 +1,56 @@
+﻿.search {
+    float: right;
+    margin: 15px 20px 0 0;
+    font-size: 20px;
+    text-align: center;
+    clear: both;
+}
+
+.dropDownClass  {
+    width: 120px;
+    font-size: 18px;
+    min-width:100px;
+}
+
+.search input {
+    width: 250px;
+    height: 25px;
+    min-width: 100px;
+    min-height: 12px;
+    font-size: 18px;
+}
+
+.list {
+    padding-top: 60px;
+}
+
+.gridViewClass th  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: White;
+    text-decoration: none;
+    line-height: 20px;
+    padding-left: 10px;
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+    border-bottom: solid 1px white;
+    width: 500px;
+    height: 50px;
+}
+
+.gridViewClass tr {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    line-height: 20px;
+    padding-left: 10px;
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+    border-bottom: solid 1px white;
+    width: 500px;
+    height: 40px;
+}
+.gridViewClass {
+    clear: both;
+    padding-top: 40px;
+}
